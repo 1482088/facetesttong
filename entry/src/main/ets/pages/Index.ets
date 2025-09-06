@@ -1,3 +1,21 @@
+import { hilog } from '@kit.PerformanceAnalysisKit';
+class Logger{
+  private  domain :number//十六进制格式的输出业务格式
+  private  tag:string//制定的标识
+
+
+  constructor(domain: number, tag: string) {
+    this.domain = domain
+    this.tag = tag
+  }
+  debug(){
+
+  }
+
+
+}
+
+
 @Entry
 @Component
 struct Index {
@@ -15,6 +33,7 @@ struct Index {
         })
         .onClick(() => {
           this.message = 'Welcome';
+
         })
     }
     .height('100%')

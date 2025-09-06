@@ -1,6 +1,8 @@
 import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
+import { fullscreen } from '../commons/utils/FullScreen';
+
 
 const DOMAIN = 0x0000;
 
@@ -8,6 +10,8 @@ export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+    this.context
+    AppStorage.setOrCreate('context',this.context)
   }
 
   onDestroy(): void {
@@ -24,7 +28,10 @@ export default class EntryAbility extends UIAbility {
         return;
       }
       hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
+fullscreen.enable()
+      setTimeout(()=>{fullscreen.disable()},5000)
     });
+
   }
 
   onWindowStageDestroy(): void {

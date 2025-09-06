@@ -1,9 +1,9 @@
 import { hilog } from '@kit.PerformanceAnalysisKit'
-
+const Tag='Mylogger'
 class Logger{
   private  domain :number//十六进制格式的输出业务格式
   private  tag:string//制定的标识
-  private format:string='%{public}s,%{pubic}s' //格式化的方式
+  private format:string='%{public}s,%{public}s' //格式化的方式
 
   constructor(domain: number, tag: string) {
     this.domain = domain
@@ -24,3 +24,4 @@ class Logger{
 
 
 }
+export  const logger=new Logger(0x1234,Tag)

@@ -1,4 +1,5 @@
 import { HcSearchBox } from "../commons/components"
+import { HcClockIn } from '../commons/components'
 
 @Component
 export struct HomePage {
@@ -16,6 +17,7 @@ export struct HomePage {
           layoutWeightValue: 1
         })
         //打卡-TODO
+        HcClockIn()
       }.padding({ left: 16, right: 16 })
       .height(64)
       .width('100%')

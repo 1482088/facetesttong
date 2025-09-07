@@ -2,6 +2,7 @@ import { fullscreen } from '../commons/utils/FullScreen';
 import { statusbar } from '../commons/utils/StatusBar';
 import { HomePage } from './HomePage';
 import { InterviewPage } from './InterviewPage';
+import { MinePage } from './MinePage';
 import { ProjectPage } from './ProjectPage';
 
 interface TabItem {
@@ -65,7 +66,7 @@ Tabs(){
       }else if (index==2) {
         InterviewPage()
       }else {
-        ProjectPage()
+        MinePage()
       }
     }
       .tabBar(this.TabbarBuilder(item,index))
